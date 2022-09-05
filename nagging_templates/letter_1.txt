@@ -1,0 +1,12 @@
+Dear [NAME],
+
+A close associate of yours has requested that you be nagged concerning the following chore:
+
+***[CHORE]***
+
+If you have already completed the task in question, feel free to ignore this email.
+
+Otherwise, TAKE ACTION IMMEDIATELY!
+
+Best Regards,
+Mr. Test Testerov

@@ -1,0 +1,10 @@
+Hey [NAME],
+
+Have you been slacking on general chores and tasks lately?
+
+Do you need a little reminder to ***[CHORE]***?
+
+Well, now you have a reminder, so excuses are NULL!
+
+Sincerely
+Mr. Test Testerov
