@@ -2,14 +2,15 @@ import pandas
 from datetime import datetime
 import smtplib
 from random import choice
-from os import listdir
+from os import listdir, environ
+
+FROM_EMAIL = environ.get('FROM_EMAIL')
+APP_PASSWORD = environ.get('APP_PASSWORD')
+
+print(FROM_EMAIL)
+print(APP_PASSWORD)
 
 NAG_LETTER_DIR = './nagging_templates'
-# insert app email account (not recommended to use real e-mail account)
-FROM_EMAIL = 'email'
-# insert password or app password if using gmail
-PASSWORD = 'psswd'
-
 
 def find_people_to_nag(nag_frame):
     now = datetime.now()
@@ -34,7 +35,8 @@ def send_nagging_emails(nagged_people):
         to_email = row.email
         message_body = get_random_nag_message(row['name'], row['chore'])
         connection = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-        connection.login(user=FROM_EMAIL, password=PASSWORD)
+        print('attempting to send email')
+        connection.login(user=FROM_EMAIL, password=APP_PASSWORD)
         connection.sendmail(FROM_EMAIL, to_addrs=to_email, msg=f"subject: Hello\n\n{message_body}")
         connection.close()
 
